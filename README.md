@@ -7,7 +7,18 @@ This project focuses on analyzing match data from the English Premier League (se
 The dataset includes match details, scores, player stats, referees, and team performance metrics.
 
 ---
+## ℹ️ **About the Source/dataset**
+**Kaggle: English Premier League data- 2021/2022**
 
+Contents:
+ * Results of each game
+ * Scores and number of goals scored
+ * Highlights (fouls, yellow cards)
+ * Match statistics (possession, attack, etc.)
+  
+Link: [click here](https://www.kaggle.com/datasets/oyedapson/english-premier-league-data-20212022)
+
+---
 ## 🛠️ **Named Queries Included**
 
 | Query Name                         | Description                                                                                 |
