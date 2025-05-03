@@ -4,22 +4,30 @@
 
 This project focuses on analyzing match data from the English Premier League (season 2021/2022) using MongoDB. We designed a series of named queries to summarize championship results and generate insights that could help configure betting odds for a sports betting application.
 
-The dataset includes match details, scores, player stats, and team performance metrics.
+The dataset includes match details, scores, player stats, referees, and team performance metrics.
 
 ---
 
 ## 🛠️ **Named Queries Included**
 
-| Query Name                   | Description                                                                  |
-|-----------------------------|------------------------------------------------------------------------------|
-| `TotalGoalsByTeam`          | Total number of goals scored by each team during the season.                 |
-| `AverageGoalsPerMatch`      | Average number of goals per match over the entire season.                    |
-| `WinLossDrawSummaryPerTeam` | Summary of wins, losses, and draws per team.                                |
-| `TopScorersOverall`         | Ranking of top goal scorers across all matches.                             |
-| `TopHomeAndAwayPerformance` | Comparison of team performance at home vs. away.                            |
-| `RecentFormSummary`         | Summary of each team's last 5 matches to assess recent form.                |
-| `MostCleanSheetsByGoalkeeper`| List of goalkeepers with the most clean sheets (matches without conceding). |
-| `HighestScoringMatches`     | Matches with the highest total number of goals scored.                      |
+| Query Name                         | Description                                                                                 |
+|-------------------------------------|---------------------------------------------------------------------------------------------|
+| `TotalMatchesCount`                | Total number of matches played during the season.                                           |
+| `DistinctTeamsList`                | List of teams participating in the championship.                                            |
+| `DistinctRefereesList`             | List of referees who officiated during the season.                                          |
+| `Round10MatchSummary`              | Date, teams, and final score for Round 10 matches.                                          |
+| `MichaelOliverMatchCount`          | Number of matches officiated by referee Michael Oliver.                                     |
+| `FirstHalfGoalsCount`             | Number of goals scored during the first half of matches.                                    |
+| `YellowCardsByMarrinerCount`       | Number of yellow cards given by referee A. Marriner.                                        |
+| `MostHomeCleanSheetsTeam`          | Team with the highest number of clean sheets (no goals conceded) at home.                  |
+| `TopHomeGoalsInWins`               | Total home goals per team in winning matches, sorted by highest totals.                     |
+| `LowestConcededGoalsInLosses`      | Total goals conceded at home per team in losing matches, sorted by lowest totals.           |
+| `YellowCardCountByMarriner`        | Total count of yellow cards attributed by A. Marriner (aggregation with unwind).            |
+| `ManchesterUnitedWinCount`         | Number of matches won by Manchester United (home or away).                                  |
+| `TopHomeWinsTeam`                  | Team with the most home match victories.                                                    |
+| `TopAwayWinsWithMaxGoals`          | Team with the most away match victories and highest goals scored in those wins.             |
+| `GoalsByPlayer_GMartinelli`        | Number of goals scored by G. Martinelli.                                                   |
+| `TotalGoalsByTeamWithLookup`       | Total number of goals scored by each team using `$lookup` with the `teams` collection.      |
 
 ---
 
@@ -28,7 +36,7 @@ The dataset includes match details, scores, player stats, and team performance m
 ```
 / (root)
 │
-├── named_queries.js          # MongoDB aggregation pipelines for each named query
+├── named_queries.js          # MongoDB aggregation pipelines and queries for each named query
 ├── README.md                 # This project description file
 └── /data                     # (Optional) Folder with sample match datasets or JSON schemas
 ```
@@ -39,21 +47,21 @@ The dataset includes match details, scores, player stats, and team performance m
 
 ## 📊 **Recommended Visualizations**
 
-- **Bar Charts** → Top scorers, total goals by team
-- **Line Charts** → Trends over time, such as form summaries
-- **Tables** → Win/loss/draw summaries
-- **Heatmaps** → Team performance home vs away
+- **Bar Charts** → Top scorers, total goals by team, yellow card counts
+- **Line Charts** → Match trends over rounds or recent form
+- **Tables** → Match summaries, referee activity summaries
+- **Heatmaps** → Home vs away performance by team
 
-These visualizations can be used inside the betting application or exported to external dashboards (Power BI, Tableau).
+These visualizations can be used in a betting application or exported to external dashboards (Power BI, Tableau).
 
 ---
 
 ## 🔗 **How to Use**
 
-1. Load the Premier League match data into MongoDB.
-2. Open the `named_queries.js` file and run the provided aggregation pipelines in the MongoDB shell or Compass.
-3. Use the outputs to derive key metrics and feed them into the betting odds configuration system.
-4. Optionally, export results for further visualization or machine learning models.
+1. Load the Premier League match data into your MongoDB database.
+2. Open the `named_queries.js` file and run the provided aggregation pipelines in MongoDB Compass or the shell.
+3. Use the outputs to derive key metrics for betting odds configuration and performance analysis.
+4. Optionally, export the query results for visualization or integration into analytics tools.
 
 ---
 
