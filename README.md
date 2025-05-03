@@ -38,7 +38,7 @@ The dataset includes match details, scores, player stats, referees, and team per
 │
 ├── named_queries.js          # MongoDB aggregation pipelines and queries for each named query
 ├── README.md                 # This project description file
-└── /data                     # (Optional) Folder with sample match datasets or JSON schemas
+└── /data                     # Folder with sample match datasets or JSON schemas
 ```
 
 ✅ Place the `named_queries.js` file at the root of the repository for easy access.
