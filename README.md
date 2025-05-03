@@ -15,9 +15,9 @@ Contents:
  * Scores and number of goals scored
  * Highlights (fouls, yellow cards)
  * Match statistics (possession, attack, etc.)
-  
+ 
 Link: [click here](https://www.kaggle.com/datasets/oyedapson/english-premier-league-data-20212022)
-
+  
 ---
 ## 🛠️ **Named Queries Included**
 
@@ -40,6 +40,8 @@ Link: [click here](https://www.kaggle.com/datasets/oyedapson/english-premier-lea
 | `GoalsByPlayer_GMartinelli`        | Number of goals scored by G. Martinelli.                                                   |
 | `TotalGoalsByTeamWithLookup`       | Total number of goals scored by each team using `$lookup` with the `teams` collection.      |
 
+⚠️  Queries are performed on a slightly modified version of the original dataset
+
 ---
 
 ## 📂 **Repository Structure**
@@ -48,8 +50,7 @@ Link: [click here](https://www.kaggle.com/datasets/oyedapson/english-premier-lea
 / (root)
 │
 ├── named_queries.js          # MongoDB aggregation pipelines and queries for each named query
-├── README.md                 # This project description file
-└── /data                     # Folder with sample match datasets or JSON schemas
+└── README.md                 # This project description file
 ```
 
 ✅ Place the `named_queries.js` file at the root of the repository for easy access.
